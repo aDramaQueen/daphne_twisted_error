@@ -1,0 +1,145 @@
+#########################
+# Docker Documentation - Dockerignore file: https://docs.docker.com/engine/reference/builder/#dockerignore-file
+#########################
+
+##### Python #####
+*.py[cod]
+*$py.class
+
+# Django
+*/*.log
+*/*.pot
+*/*.pyc
+*/__pycache__
+*/*.sqlite3
+
+# Distribution / packaging
+.Python build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*/*.egg-info/
+.installed.cfg
+*/*.egg
+*/*.manifest
+*/*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+.cache
+.pytest_cache/
+nosetests.xml
+coverage.xml
+*/*.cover
+.hypothesis/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# pyenv
+.python-version
+
+# Backup files #
+*/*.bak
+
+# celery
+celerybeat-schedule.*
+
+# SageMath parsed files
+*/*.sage.py
+
+# Environments
+.env/
+.venv/
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# mkdocs documentation
+/site
+
+# mypy
+.mypy_cache/
+
+# sftp configuration file
+sftp-config.json
+
+# Package control specific files Package
+Control.last-run
+Control.ca-list
+Control.ca-bundle
+Control.system-ca-bundle
+GitHub.sublime-settings
+
+# Sphinx documentation
+.docs/
+
+##### OSX #####
+
+*/.DS_Store
+*/.AppleDouble
+*/.LSOverride
+
+##### IDEs / Texteditors #####
+
+# Sublime Text
+*/*.tmlanguage.cache
+*/*.tmPreferences.cache
+*/*.stTheme.cache
+*/*.sublime-workspace
+*/*.sublime-project
+
+# IntelliJ / PyCharm
+.idea/
+out/
+**/*.iws
+**/*.iml
+
+# Eclipse / PyDev
+.settings/
+.project
+.pydevproject
+
+# Visual Studio Code
+.vscode/*
+.history
+
+# Profiling files
+**/*.prof
+
+##### Git #####
+.git/
+.gitignore
+
+##### Docker #####
+.env
+.dockerignore
+Dockerfile
+dev-compose.yml
+dev-compose-ssl.yml
+dev-ssl.yml
+docker/
+
+##### Channels App #####
+static/*
+socket/*
+logs-nginx/*
+resources/*
+*.sqlite3

@@ -1,0 +1,49 @@
+##########
+# Docker composition, that maps this project into a container
+##########
+
+services:
+  daphne:
+    build: .
+    image: daphne_dev  # Just an image name. Change this to whatever you want.
+    command: python run-daphne.py
+    volumes:
+      # Map logging directory from Django/Daphne docker image to this project. This makes it easy to look at the logging files.
+      - type: bind
+        source: ./logs-daphne
+        target: /var/log/daphne
+      # Make UNIX socket available
+      - shared-socket:/run/daphne
+    develop:
+      # Watch "chat" directory for any changes
+      # @see https://docs.docker.com/compose/how-tos/file-watch/
+      watch:
+        - action: sync
+          path: .
+          target: /daphne-app/daphne_twisted_error/chat
+          # Ignore NGINX binding
+          ignore:
+            - logs-daphne
+            - logs-nginx
+    expose:
+      - "8000"  # Internal port exposed for NGINX
+
+  web-server:
+    # Replace with NGINX versions of your choice: https://hub.docker.com/_/nginx/tags
+    image: nginx:stable-bookworm-perl
+    volumes:
+      # Copy custom config file
+      - ./resources/nginx.conf:/etc/nginx/nginx.conf
+      # Map logging directory from NGINX docker image to this project. This makes it easy to look at the logging files.
+      - type: bind
+        source: ./logs-nginx
+        target: /var/log/nginx
+      # Grab UNIX socket from local daphne image
+      - shared-socket:/run/daphne
+    ports:
+      - "8000:80"  # External port mapping
+    depends_on:
+      - daphne
+
+volumes:
+  shared-socket:
