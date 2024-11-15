@@ -364,5 +364,3 @@ logs-nginx/*
 !logs-nginx/.gitkeep
 logs-daphne/*
 !logs-daphne/.gitkeep
-socket/*
-!socket/.gitkeep

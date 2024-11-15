@@ -15,18 +15,14 @@ services:
       # Make UNIX socket available
       - shared-socket:/run/daphne
     develop:
-      # Watch "chat" directory for any changes
+      # Watch out for any changes (except files that are mentioned in the ".dockerignore" file)
       # @see https://docs.docker.com/compose/how-tos/file-watch/
       watch:
         - action: sync
           path: .
-          target: /daphne-app/daphne_twisted_error/chat
-          # Ignore NGINX binding
-          ignore:
-            - logs-daphne
-            - logs-nginx
+          target: /daphne-app
     expose:
-      - "8000"  # Internal port exposed for NGINX
+      - "8000"  # Internal port exposed for NGINX image, if you run over HTTP
 
   web-server:
     # Replace with NGINX versions of your choice: https://hub.docker.com/_/nginx/tags

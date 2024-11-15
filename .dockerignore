@@ -137,9 +137,9 @@ dev-compose-ssl.yml
 dev-ssl.yml
 docker/
 
-##### Channels App #####
-static/*
-socket/*
-logs-nginx/*
-resources/*
+##### Daphne/Channels App #####
+static/
+logs-nginx/
+logs-daphne/
+resources/
 *.sqlite3
