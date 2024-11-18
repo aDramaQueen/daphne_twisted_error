@@ -3,7 +3,8 @@ Project for testing daphne behind NGINX as proxy server
 
 ## Requirements
 
-Docker Compose v2.22 or newer, if you want to use the "watch" mode (@see **https://docs.docker.com/compose/how-tos/file-watch/**)
+Docker Compose v2.22 or newer, if you want to use the "watch" mode  
+(@see **https://docs.docker.com/compose/how-tos/file-watch/**)
 
 If not, then almost every other docker compose versions works
 
