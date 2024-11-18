@@ -22,7 +22,7 @@ If not, then almost every other docker compose versions works
   ```
   
 - This project implements the standard [**channels tutorial**](https://channels.readthedocs.io/en/latest/tutorial/index.html), therefore open your browser of choice and navigate to:
-  ```http request
+  ```
   http://localhost:8000/chat
   ```
 
