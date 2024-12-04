@@ -1,5 +1,5 @@
 # daphne_twisted_error
-Project for testing daphne behind NGINX as proxy server
+Project for testing daphne behind NGINX as proxy server, for error hunting as described in [**Daphne Issue #535: Twisted 24.10.0 incompatibility**](https://github.com/django/daphne/issues/535).
 
 ## Requirements
 
